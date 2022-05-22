@@ -12,6 +12,6 @@ test("displays message", () => {
   });
 
   // Assert the rendered text of the component
-  // const profilePara = wrapper.get('[testId="profile-text"]');
-  // expect(profilePara.text()).toBe("H");
+  const profilePara = wrapper.get('[testId="profile-text"]');
+  expect(profilePara.text()).toBe("R");
 });
