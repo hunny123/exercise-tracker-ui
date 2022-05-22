@@ -42,5 +42,5 @@ jobs:
       - uses: mikeal/publish-to-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH_NAME: ${{ GITHUB_REF_NAME }} #optional defaults to master
+          BRANCH_NAME: ${{ env.GITHUB_REF_NAME }} #optional defaults to master
       - run: npm run build --if-present
