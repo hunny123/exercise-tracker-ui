@@ -28,4 +28,8 @@ jobs:
       - run: npm ci
       - run: npm run coverage
       - run: npx update-badge
+      - name: Set code coverage commit status 📫
+          run: npx set-gh-status
+          env: 
+             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm run build --if-present
