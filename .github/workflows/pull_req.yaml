@@ -1,7 +1,7 @@
-name: Deploy staging CI
+name: Deploy  CI For PRs
 on:
-  push:
-    branches: [ staging ]
+   pull:
+    branches: [ main ]
 jobs:
     build:
     runs-on: ubuntu-latest
