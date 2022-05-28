@@ -43,7 +43,7 @@ jobs:
           BRANCH_NAME: "main" #optional defaults to master
       - name: deployment
         #  your build commands
-      - uses: BetaHuhn/deploy-to-vercel-action@develop
+        uses: BetaHuhn/deploy-to-vercel-action@develop
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
