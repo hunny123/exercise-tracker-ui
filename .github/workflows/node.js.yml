@@ -43,7 +43,6 @@ jobs:
           BRANCH_NAME: "main" #optional defaults to master
       - name: deployment
         #  your build commands
-        run: npm run build
       - uses: BetaHuhn/deploy-to-vercel-action@develop
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
