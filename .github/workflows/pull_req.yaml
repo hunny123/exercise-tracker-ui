@@ -35,7 +35,10 @@ jobs:
       - uses: mikeal/publish-to-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH_NAME: ${{ env.BRANCH_NAME }} #optional defaults to master
+          BRANCH_NAME: ${{ env.BRANCH_NAME }} 
+          #optional defaults to master
+
+          
   deploy:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
