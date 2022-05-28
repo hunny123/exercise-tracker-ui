@@ -15,7 +15,7 @@
               <button
                 class="mt-3 py-2 px-8 font-bold text-base .shadow-lg rounded-lg bg-white text-primary md:mt-8"
               >
-                Log it
+                Log it here and ther
               </button>
             </div>
             <div class="w-full my-2 py-2 md:mx-3 md:1/2 md:my-5">
