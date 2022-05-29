@@ -48,7 +48,7 @@ jobs:
       - run: git status
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-        commit_message: Apply BADGE UPDATE
+          commit_message: Apply BADGE UPDATE
 
       - name: deployment #  your build commands
         uses: BetaHuhn/deploy-to-vercel-action@develop
