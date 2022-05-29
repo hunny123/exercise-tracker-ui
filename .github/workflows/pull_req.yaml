@@ -35,16 +35,21 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: echo "BRANCH_NAME=$(echo ${GITHUB_HEAD_REF} | tr / -)" >> $GITHUB_ENV
-      - name: Update code coverage badge 🥇
-        run: npx update-badge
-      - uses: mikeal/publish-to-github-action@master
+      - name: Ensure coverage has not dropped 📈
+        run: npx -p check-code-coverage set-gh-status --check-against-readme
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH_NAME: ${{ env.BRANCH_NAME }} #optional defaults to master
+          GH_SHA: ${{ github.event.after }}
+      - name: updating the badge 📈
+        run: npx update-badge
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_SHA: ${{ github.event.after }}
+      - run: git status
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply BADGE UPDATE
 
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
       - name: deployment #  your build commands
         uses: BetaHuhn/deploy-to-vercel-action@develop
         with:
