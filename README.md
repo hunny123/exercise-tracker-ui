@@ -1,4 +1,4 @@
-# exercise-tracker-ui ![check-code-coverage](https://img.shields.io/badge/code--coverage-40.4%25-red)
+# exercise-tracker-ui ![check-code-coverage](https://img.shields.io/badge/code--coverage-32.97%25-red)
 
 This template should help get you started developing with Vue 3 in Vite.
 
