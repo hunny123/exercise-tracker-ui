@@ -37,13 +37,13 @@ jobs:
       - run: echo "BRANCH_NAME=$(echo ${GITHUB_HEAD_REF} | tr / -)" >> $GITHUB_ENV
       - name: Update code coverage badge 🥇
         run: npx update-badge
-      - run: git status
-      - run: git commit -m "update badge"
-      # - name: Push changes
-      #   uses: ad-m/github-push-action@master
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     branch: ${{ env.BRANCH_NAME }}
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ env.BRANCH_NAME }}
+          force: True
       #optional defaults to master
 
       - name: deployment #  your build commands
