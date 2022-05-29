@@ -40,6 +40,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_SHA: ${{ github.event.after }}
+      - name: Ensure coverage has not dropped 📈
+        run: npx update-badge
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_SHA: ${{ github.event.after }}
 
       - name: deployment #  your build commands
         uses: BetaHuhn/deploy-to-vercel-action@develop
